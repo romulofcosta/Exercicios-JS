@@ -24,24 +24,30 @@
 
             let number = parseInt(value);
 
-            document.write('Tabuada do número' + value)
+
+            //document.write("Tabuada do número ${number}")
 
             for (let i = 0; i <= 10; i++ ) {
-                document.write(value + ' + ' + i + ' = ' + value + i + '</br>');
-            }
-            
-            for (let i = 0; i <= 10; i++ ) {
-                document.write(value + ' - ' + i + ' = ' + value - i + '</br>');
+                let sum = number + i;
+
+                const result = document.createElement('div')
+
+                result.innerHTML = value + ' + ' + i + ' = ' + sum + '\n'
+                document.body.appendChild(result)
+              //  document.write(value + ' + ' + i + ' = ' + sum + '</br>');
             }
 
-            for (let i = 0; i <= 10; i++ ) {
-                document.write(value + ' * ' + i + ' = ' + value * i + '</br>');
-            }
+            // for (let i = 0; i <= 10; i++ ) {
+            //     let subtract = number - i
+            //     document.write(value + ' - ' + i + ' = ' + subtract + '</br>');
+            // }
 
-            for (let i = 0; i <= 10; i++ ) {
-                document.write(value + ' / ' + i + ' = ' + value / i + '</br>');
-            }
-            console.log('deu certo!!!') 
+            // for (let i = 0; i <= 10; i++ ) {
+            //     let product = number * i
+            //     document.write(value + ' * ' + i + ' = ' + product + '</br>');
+            // }
+
+            console.log('deu certo!!!')
 
         }
     }
@@ -64,4 +70,4 @@
   }
 
 </script>
-</html> 
+</html>
