@@ -18,8 +18,6 @@
 
     function calculateNumber() {
 
-        removeElment()
-
         const value = document.getElementById('input-number').value
 
         if (validateNumber(value)) {
@@ -32,11 +30,10 @@
             for (let i = 0; i <= 10; i++ ) {
                 let sum = number + i;
 
-                const paragraph = document.createElement('p')
                 const result = document.createElement('div')
 
                 result.innerHTML = value + ' + ' + i + ' = ' + sum + '\n'
-                document.body.appendChild("div").appendChild("result")
+                document.body.appendChild(result)
               //  document.write(value + ' + ' + i + ' = ' + sum + '</br>');
             }
 
@@ -55,36 +52,21 @@
         }
     }
 
-    function removeElment() {
-        const div = document.getElementsByTagName("div")[0]
-
-        if (div.length !== 0) {
-            div.remove()
-        }
-    }
-
-    function validateNumber(number) {
+  function validateNumber (number) {
 
     if (number.length === 0) {
         alert ('Digite um numero!')
         return false
     }
 
-    if (IsNaN(number) || !hasSpecialCharacter(number))  {
+    if (number.match(/[A-z]/i) !== null ||
+        number.match(/['|!@#$%¨*,;(&?^_.))]/i) !== null)  {
+
         alert ('Entrada inválida, digite apenas números!')
         return false
     }
 
     return true
-  }
-
-  function hasSpecialCharacter(text) {
-
-    if (text.match(/['|!@#$%¨*,;(&?^_.))]/i) !== null) {
-        return true
-    }
-    
-    return false
   }
 
 </script>
